@@ -1,13 +1,13 @@
-# Sample Hardhat Project
+# 1 MAN 1 VOTE 
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This idea is inspired by Nelson Mandela famous quote : "One Man, One Vote"
 
-Try running some of the following tasks:
+### Problem 
 
-```shell
-npx hardhat help
-npx hardhat test
-GAS_REPORT=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+ - Scalability : using a "list" of voters could be very expensive if we consider a country with millions of voters 
+
+### Solution 
+
+![PoPV](./docs/Snapshot.png)
+
+
