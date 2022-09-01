@@ -1,6 +1,13 @@
 # 1 MAN 1 VOTE 
 
-This idea is inspired by Nelson Mandela famous quote : "One Man, One Vote"
+Tribute to Nelson Mandela famous quote : "One Man, One Vote"
+
+
+### Inspiration 
+
+[ERC777-VotingSystem](https://hackernoon.com/i-built-an-ethereum-based-fully-decentralized-voting-system-5x8t34gz)
+
+
 
 ### Problem 
 
