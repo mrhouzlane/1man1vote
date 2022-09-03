@@ -40,7 +40,8 @@ We will split the voting into 3 trusted Operators :
 - Middle voters 
 
 To reduce the weight of paying gas to the voters, they will not send tokens to the contract and will have an Trusted Operator handling that for them.
-In other words, all you have to do to vote is choose an Operator and authorize him with ```authorizeOperator``` function
+In other words, all you have to do to vote is choose an Operator and authorize him with ```authorizeOperator``` function. 
+But the Operator can be corrupted,  or someone unknow like Satoshi Nakamoto. To resolve this issue, we are using WorldCoin to identify the 3 operators as humans. This is a main feature in the process and very important. The "Doxed" reputation is not a proof of person and can't apply for those important events. WorldCoin is a major feature as it allows to fight corruption in this case. 
 
 ### Aditional features 
 
