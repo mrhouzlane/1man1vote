@@ -17,11 +17,11 @@ The idea is to let every person holding 1man1vote tokens to have the right to vo
 
 ![PoPV](./docs/Snapshot.png)
 
-### Rules of 1man1vote 
+### Non-correlated votes 
 
-10 tokens -> 3 points
-100 tokens --> 5 points 
-10000 tokens --> 50 points 
+- 10 tokens == 3 points
+- 100 tokens == 5 points 
+- 10000 tokens == 50 points 
 
 This "non-correlated" tokens/points rule is made to encourage more votes which means more liquidity to the token contract, and by this less frugality in votes. The more liquid the token contract will be, the less disparities it will have, and the more "fair" the vote should be. 
 We incentivise more liquidity to have less points of failure in the voting. 
