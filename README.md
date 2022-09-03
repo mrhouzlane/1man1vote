@@ -6,7 +6,8 @@ The idea is to let every person holding 1man1vote tokens to have the right to vo
 
 ### Inspiration 
 
-[ERC777-VotingSystem](https://hackernoon.com/i-built-an-ethereum-based-fully-decentralized-voting-system-5x8t34gz)
+- [ERC777-VotingSystem](https://hackernoon.com/i-built-an-ethereum-based-fully-decentralized-voting-system-5x8t34gz)
+- [OpenZeppelin ERC777](https://docs.openzeppelin.com/contracts/2.x/api/token/erc777?ref=hackernoon.com)
 
 ### Problem 
 
