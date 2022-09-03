@@ -14,19 +14,12 @@ The idea is to let every person holding 1man1vote tokens to have the right to vo
  - High fees to express an opinion. 
  - Scalability : using a "list" of voters could be very expensive if we consider a country with millions of voters 
  - token holders don't have real "control" over their tokens.
+ - Malicious person can send tokens to another address and vote again and again with his power rights 
 
 ### Solution 
 
 ![PoPV](./docs/Snapshot.png)
 
-### Non-correlated votes 
-
-- 10 tokens == 3 points
-- 100 tokens == 5 points 
-- 10000 tokens == 50 points 
-
-This "non-correlated" tokens/points rule is made to encourage more votes which means more liquidity to the token contract, and by this less frugality in votes. The more liquid the token contract will be, the less disparities it will have, and the more "fair" the vote should be. 
-We incentivise more liquidity to have less points of failure in the voting. 
 
 ### Smart contract 
 
