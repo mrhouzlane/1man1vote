@@ -26,7 +26,8 @@ We are here facing the problem of high list voting because we are talking countr
 ### Smart contract 
 
 - send tokens to a contract and notify it in a single transaction with ERC777
-- Use a granularity of 10 minimum tokens minted/burned for voting to respect our specified points which listed in the rules of 1man1vote 
+- Use a granularity of 10 minimum tokens minted/burned for voting to respect our specified points which listed in the rules of 1man1vote.
+- Update the balance history on-chain when token goes from OperatorX to Contract. 
 
 Logic :
 
