@@ -10,6 +10,8 @@ The idea is to let every person holding 1man1vote tokens to have the right to vo
 
 ### Problem 
 
+We are here facing the problem of high list voting because we are talking countries and not commnuities anymore. 
+
  - Sybil attack resilience — it is hard to keep track of valid voters.
  - High fees to express an opinion. 
  - Scalability : using a "list" of voters could be very expensive if we consider a country with millions of voters 
