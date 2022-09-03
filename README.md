@@ -31,4 +31,15 @@ We incentivise more liquidity to have less points of failure in the voting.
 - send tokens to a contract and notify it in a single transaction with ERC777
 - Use a granularity of 10 minimum tokens minted/burned for voting to respect our specified points which listed in the rules of 1man1vote 
 
+### Additional features 
+
+We will split the voting into 3 trusted Operators : 
+
+- Right voters
+- Left voters
+- Middle voters 
+
+
+Each voter will send its tokens to the Operator of his choice. The operator send back to the voter an NFT with details of his vote.
+
 
