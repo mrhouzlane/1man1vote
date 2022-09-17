@@ -13,25 +13,25 @@ export const Main: React.FC = () => {
   const toast = useToast();
 
   // TODO: Change contractAddress and ABI
-  const contractAddress = "0x5B26da852945f37638Ff987c060022e8159a57c5";
+  const contractAddress = "0xaBC6b6bcd17c0fca4c8AE5964E6D4130Aa0B39D1";
 
   const main = async () => {
     if (!signer) return;
     const contract = new ethers.Contract(contractAddress, abi, signer);
 
     // TODO: Change function name
-    const transaction = await contract.mint();
+    const transaction = await contract.balanceAt("0x839B878873998F02cE2f5c6D78d1B0842e58F192", 1663374888);
     if (!transaction) return;
     toast({
       render: () => (
         <Box color="white" p={3} bg={"green"} rounded={"md"}>
           <CheckCircleIcon mr="2" />
-          Please wait for confirmation of the Mint Tx:{" "}
+          Please wait for confirmation for Balance Request Tx:{" "}
           <Link
             textDecoration={"underline"}
             fontSize="sm"
             isExternal
-            href={`https://rinkeby.etherscan.io/tx/${transaction.hash}`}
+            href={`https://goerli.etherscan.io/tx/${transaction.hash}`}
             maxWidth={80}
             noOfLines={1}
           >
@@ -63,7 +63,7 @@ export const Main: React.FC = () => {
             color={config.styles.text.color.primary}
             onClick={main}
           >
-            Send Tx
+            balanceAt
           </Button>
         </ConnectWalletWrapper>
       </Stack>

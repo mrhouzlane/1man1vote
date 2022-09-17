@@ -7,4 +7,3 @@ interface ISnapshot {
     function balanceAt(address account, uint256 timestamp) external view returns (uint256);
     function clearAccountHistory() external;
 }
-

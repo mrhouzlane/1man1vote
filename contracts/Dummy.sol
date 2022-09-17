@@ -2,18 +2,17 @@
 
 pragma solidity ^0.8.0;
 
+import "hardhat/console.sol";
 import "./Snapshot.sol";
-import "./Utils.sol";
 
-
-contract MyToken is ERC777WithHistory {
+contract MyToken is Snapshot {
     address payable public founder;
 
     constructor(
         address payable _founder
     )
         public
-        ERC777WithHistory("My token", "TKN", new address[](0))
+        Snapshot("1man1vote", "1M1V", new address[](0))
     {
         founder = _founder;
     }

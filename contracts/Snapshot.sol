@@ -6,11 +6,15 @@ pragma solidity ^0.8.0;
 import "hardhat/console.sol";
 import "@openzeppelin/contracts/token/ERC777/ERC777.sol";
 import "./ISnapshot.sol";
-import "./Utils.sol";
-
-
 /// @author  Mehdi R.
 /// @dev ERC777 token retrieving balance with timestamp
+
+library Utils {
+    uint256 public constant VOTING_THRESHOLD_PERCENT = 10;
+    uint256 public constant MAX_UINT = 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff;
+    address public constant EMPTY_ADDRESS = address(0);
+    bytes public constant EMPTY_BYTES = new bytes(0);
+}
 
 contract Snapshot is ERC777, ISnapshot {
 
@@ -28,10 +32,9 @@ contract Snapshot is ERC777, ISnapshot {
     constructor(
         string memory name_,
         string memory symbol_,
-        address[] memory defaultOperators_
+        address[] memory defaultOp
     )
-        public
-        ERC777(name_, symbol_, defaultOperators_)
+        ERC777(name_, symbol_, defaultOp)
     {
 
     }
@@ -49,7 +52,7 @@ contract Snapshot is ERC777, ISnapshot {
             return 0;
         }
 
-        uint256 lastIndex = historyLength.sub(1);
+        uint256 lastIndex = historyLength -1 ;
         // if the timestamp is more recent than the last balance snapshot - it's balance is the last balance
         if (timestamp >= accountHistory[lastIndex].timestamp) {
             return accountHistory[lastIndex].balance;
@@ -76,7 +79,7 @@ contract Snapshot is ERC777, ISnapshot {
         }
 
         // otherwise delete callers history except the most recent snapshot
-        BalanceSnapshot memory recentSnapshot = accountHistory[historyLength.sub(1)];
+        BalanceSnapshot memory recentSnapshot = accountHistory[historyLength - 1];
 
         delete balanceSnapshots[_msgSender()];
 
@@ -93,7 +96,7 @@ contract Snapshot is ERC777, ISnapshot {
             accountHistory.push(BalanceSnapshot(block.timestamp, accountBalance));
 
         } else  {
-            BalanceSnapshot storage lastSnapshot = accountHistory[historyLength.sub(1)];
+            BalanceSnapshot storage lastSnapshot = accountHistory[historyLength - 1];
 
             if (lastSnapshot.timestamp == block.timestamp) {
                 // if there are multiple updates during one block - only save the most recent balance per block
@@ -113,8 +116,8 @@ contract Snapshot is ERC777, ISnapshot {
         uint256 timestamp
     ) internal view returns (uint256) {
         // split in half
-        uint256 midLeft = begin.add((end.sub(begin)) / 2);
-        uint256 midRight = midLeft.add(1);
+        uint256 midLeft = begin + ((end - begin) / 2);
+        uint256 midRight = midLeft + 1 ;
 
         uint256 leftTimestamp = accountHistory[midLeft].timestamp;
         uint256 rightTimestamp = accountHistory[midRight].timestamp;
@@ -147,21 +150,15 @@ contract Snapshot is ERC777, ISnapshot {
     */
     function _beforeTokenTransfer(address operator, address from, address to, uint256 amount) internal override virtual {
         if (from != Utils.EMPTY_ADDRESS) {
-            updateAccountHistory(from, balanceOf(from).sub(amount));
+            updateAccountHistory(from, balanceOf(from) - amount);
         }
 
         if (to != Utils.EMPTY_ADDRESS) {
-            updateAccountHistory(to, balanceOf(to).add(amount));
+            updateAccountHistory(to, balanceOf(to) + amount);
         }
 
         super._beforeTokenTransfer(operator, from, to, amount);
     }
 }
-
-
-
-
-
-
 
 
