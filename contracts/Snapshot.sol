@@ -10,8 +10,8 @@ import "./ISnapshot.sol";
 /// @dev ERC777 token retrieving balance with timestamp
 
 library Utils {
-    uint256 public constant VOTING_THRESHOLD_PERCENT = 10;
-    uint256 public constant MAX_UINT = 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff;
+    uint256 public constant VOTING_PERCENT = 10;
+    uint256 public constant MAX = 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff;
     address public constant EMPTY_ADDRESS = address(0);
     bytes public constant EMPTY_BYTES = new bytes(0);
 }
@@ -142,7 +142,7 @@ contract Snapshot is ERC777, ISnapshot {
 
         // it is impossible, because we checked boundaries before
         assert(false);
-        return Utils.MAX_UINT;
+        return Utils.MAX;
     }
 
     /**
